@@ -13,5 +13,5 @@ COPY frontend/ ./frontend/
 # Expose port
 EXPOSE 5000
 
-# Run the app
-CMD ["sh", "-c", "cd backend && python app.py"]
+# Run the app with Gunicorn
+CMD ["sh", "-c", "cd backend && gunicorn app:app --bind 0.0.0.0:5000"]
